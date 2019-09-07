@@ -1,0 +1,901 @@
+/*-----------------------------------------------------------------------------------*
+ * Theme Name:  Simple
+ * Theme URI:   https://github.com/djallet/simple-wordpress
+ * Author:      Denis Jallet
+ * Author URI:  https://jallet.org
+ * Description: Simple Theme - My own minimalist theme based on the awesome Naked starter theme by Joshua Beckman
+ * Version:     1.0
+ * License:     GNU General Public License v2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * Tags:        blog, one-column, custom-menu, featured-images, footer-widgets, translation-ready
+ * Text Domain: simple
+ *-----------------------------------------------------------------------------------*/
+
+/* Main source:
+https://github.com/Automattic/_s/blob/master/style.css
+*/
+
+/* Grid sources:
+https://www.cssigniter.com/creating-simple-wordpress-blogging-layout-css-grid-flexbox/
+https://www.alsacreations.com/article/lire/1388-css3-grid-layout.html
+*/
+
+/*
+ * Rules are grouped according to the html main component they applied to,
+ * in the same order it appears in a page: header, main, menus, footer
+ * Except for the first group of rules which sets global layout
+ */
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/* Typography                                                                        */
+/*-----------------------------------------------------------------------------------*/
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea
+{
+	color: #404040;
+	font-family: sans-serif;
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+	clear: both;
+}
+
+p
+{
+	margin-bottom: 0;
+}
+
+dfn, cite, em, i
+{
+	font-style: italic;
+}
+
+blockquote
+{
+	margin: 0 1.5em;
+}
+
+address
+{
+	margin: 0 0 1.5em;
+}
+
+pre
+{
+	background: #eee;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
+	font-size: 0.9375rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code, kbd, tt, var
+{
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-size: 15px;
+	font-size: 0.9375rem;
+}
+
+abbr, acronym
+{
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark, ins
+{
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+big
+{
+	font-size: 125%;
+}
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/* HTML Elements                                                                     */
+/*-----------------------------------------------------------------------------------*/
+
+html
+{
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after
+{
+	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+body
+{
+	background: #fff; 	/* Fallback for when there is no custom background color defined. */
+}
+
+hr
+{
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+ul, ol
+{
+	margin: 0 0 1.5em 3em;
+}
+
+ul
+{
+	list-style: disc;
+}
+
+ol
+{
+	list-style: decimal;
+}
+
+li > ul,
+li > ol
+{
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt
+{
+	font-weight: bold;
+}
+
+dd
+{
+	margin: 0 1.5em 1.5em;
+}
+
+img
+{
+	height: auto;
+	/* Make sure images are scaled correctly. */
+	max-width: 100%;
+	/* Adhere to container width. */
+}
+
+figure
+{
+	margin: 1em 0;
+	/* Extra wide images within figure tags don't overflow the content area. */
+}
+
+table
+{
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/* Global Layout                                                                     */
+/*-----------------------------------------------------------------------------------*/
+
+/* required by theme check */
+.sticky { position: relative; background: #f3f3f3; }
+.screen-reader-text { position: absolute !important; left: -999em; }
+.bypostauthor {	border: 1px solid #333;	padding: 2px; }
+.aligncenter, div.aligncenter { display: block; margin: 5px auto 5px auto; }
+.alignright { float:right; margin: 5px 0 20px 20px; }
+.alignleft { float: left; margin: 5px 20px 20px 0; }
+
+/* To cleanly start a new <p> after a gallery */
+/*.single p,
+.page p
+{
+	clear: both;
+}
+*/
+
+a
+{
+	color: #404040;
+	text-decoration: none;
+}
+
+
+a:hover, a:focus, a:active
+{
+	color: #e7503e;
+}
+
+/* mobile */
+	.header, .main
+	{
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+
+	/* Using padding for footer allow a full screen width
+	   which is usefull as it has a background color */
+	.footer
+	{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+/* tablet */
+@media only screen and (min-width: 768px)
+{
+}
+
+/* laptop */
+@media only screen and (min-width: 992px)
+{
+	/* Center content with maximum width og 992px */
+	.header, .main
+	{
+		max-width: 992px;
+		margin: auto;
+	}
+
+	/* Using padding for footer */
+	.footer
+	{
+		padding-left: calc( ( 100% - 992px ) / 2 );
+		padding-right: calc( ( 100% - 992px ) / 2 );
+	}
+}
+
+/* large laptop */
+@media only screen and (min-width: 1200px)
+{
+}
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/* Header                                                                            */
+/*-----------------------------------------------------------------------------------*/
+
+/* Grid areas */
+.site-title       { grid-area: site-title; }
+.site-description { grid-area: site-description; }
+.mobile-menu      { grid-area: mobile-menu; }
+
+/* mobile */
+	/* Grid layout for header on mobile */
+	.brand
+	{
+		display: grid;
+		grid-template-columns: 1fr 50px;
+		grid-template-areas:
+							 "site-title site-title"
+							 "site-description mobile-menu";
+		text-align: center;
+		align-items: center;
+	}
+
+	.site-title
+	{
+		font-family: serif;
+		font-size: 36px;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	.site-title a
+	{
+		font-weight: normal;
+	}
+
+	.site-title a:hover
+	{
+		color: #404040;
+	}
+
+	.site-description
+	{
+		color: #777;
+		margin-top: 0;
+		margin-bottom: 0;
+		font-size: medium;
+		font-weight: normal;
+	}
+
+/* tablet */
+@media only screen and (min-width: 768px)
+{
+	.header
+	{
+		border-bottom: 1px solid #d8d8d8;
+	}
+
+	.brand
+	{
+		display: block;
+	}
+
+	.site-title
+	{
+		font-size: 52px;
+		margin-top: 30px;
+	}
+
+	.site-description
+	{
+		margin-bottom: 30px; /* to give room to the menu */
+	}
+}
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/* Menus                                                                             */
+/*-----------------------------------------------------------------------------------*/
+
+/* source:
+https://webdesign.tutsplus.com/fr/articles/a-simple-responsive-mobile-first-navigation--webdesign-6074
+
+Mobile menu without javascript:
+https://www.cssscript.com/pure-css-mobile-compatible-responsive-dropdown-menu/
+https://medium.com/@heyoka/responsive-pure-css-off-canvas-hamburger-menu-aebc8d11d793
+*/
+
+/* mobile */
+
+	.main-navigation ul
+	{
+		list-style: none;
+		padding: 5px 0;
+		margin: 0;
+	}
+
+	.main-navigation li a
+	{
+		display: block;
+		padding: 0 20px;
+		font-size: large;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		line-height: 2em;
+		border-bottom: 1px solid #d8d8d8;
+	}
+
+	.main-navigation li:last-child a
+	{
+		border-bottom: none;
+	}
+
+	.main-navigation li a:hover,
+	.main-navigation li a:focus
+	{
+		color: #1c1c1c;
+		background: #ccc;
+	}
+
+	/* Hide the checkbox we are using as trick to generate a toggle event and the mobile menu items */
+	[id^=drop],
+	.menu
+	{
+		display: none;
+	}
+
+	.mobile-menu
+	{
+		background: url(img/menu-icon.png) no-repeat center;
+		color: transparent; /* Hide the text label added to improve accessibility */
+		cursor: pointer;
+		width: 50px;
+		height: 40px;
+	}
+
+	/* Display mobile menu when Menu link is clicked which uses the checkbox trick to enable a toggle event */
+	[id^=drop]:checked + div ul
+	{
+		display: block;
+	}
+
+/* tablet */
+@media only screen and (min-width: 768px)
+{
+	/* Hide the mobile menu on other devices */
+	.mobile-menu
+	{
+		display: none;
+	}
+
+	/* Display tablet / laptop menu */
+	.menu
+	{
+		display: block;
+	}
+
+	.main-navigation
+	{
+		width: 100%;
+		/* Center menus */
+		display: grid;
+		justify-content: center;
+	}
+
+	.main-navigation li
+	{
+		display: inline;
+	}
+
+	.main-navigation li a
+	{
+		float: left;
+		border: none;
+		padding: 0 10px;
+	}
+}
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/* Main: common                                                                      */
+/*-----------------------------------------------------------------------------------*/
+
+/* mobile */
+	.post-thumbnail
+	{
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	.post-thumbnail img
+	{
+		width: 100%;
+	}
+
+	.post-title
+	{
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	.post-meta
+	{
+		display: flex;
+	}
+
+	.post-category ul
+	{
+		margin: 0;
+		padding: 0;
+	}
+
+	.post-category li
+	{
+		list-style: none;
+		font-weight: bold;
+	}
+
+/* tablet */
+@media only screen and (min-width: 768px)
+{
+}
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/* Main: home, archive, category, error404, search, tag                              */
+/*-----------------------------------------------------------------------------------*/
+
+/* In posts list (index.php), article components are ordered as follow: */
+/* post-thumbnail, post-title, post-meta, post-excerpt                  */
+
+/* Grid areas */
+.post-thumbnail { grid-area: post-thumbnail; }
+.post-title     { grid-area: post-title; }
+.post-meta      { grid-area: post-meta; }
+.post-excerpt   { grid-area: post-excerpt; }
+
+/* mobile */
+	/* For category, search result and tag */
+	.list-title
+	{
+		text-align: center;
+		font-size: xx-large;
+	}
+
+	/* Grid layout for posts list on mobile */
+	.post
+	{
+		display: grid;
+		grid-template-columns: 100%;
+		grid-template-areas:
+							 "post-thumbnail"
+							 "post-title"
+							 "post-meta"
+							 "post-excerpt";
+		padding: 12px 0 5px 0;
+	}
+
+	/* For error page only */
+	.post.error
+	{
+		display: block;
+	}
+
+	/* Pagination */
+	.pagination
+	{
+		display: flex;
+		justify-content: center;
+	}
+
+	.page-numbers
+	{
+		display: none; /* Do not display page numbers in pagination on mobile */
+		font-weight: bold;
+		font-size: x-large;
+		margin-right: 10px;
+		margin-left: 10px;
+	 }
+
+	/* Give a dark background to improve accessibility */
+	.current.page-numbers
+	{
+		color: #f7a500;
+		background-color: #404040;
+		padding-right: 5px;
+		padding-left: 5px;
+	}
+
+	.prev.page-numbers,
+	.next.page-numbers
+	{
+		display: inline-block; /* Display prev and next in pagination on mobile */
+	}
+
+/* tablet */
+@media only screen and (min-width: 768px)
+{
+	/* Grid layout for posts list on tablet and laptop */
+	.post
+	{
+		grid-column-gap: 15px;
+		grid-template-columns: auto 1fr; /* First column is for thumbnail */
+		grid-template-rows: auto auto 1fr; /* Shrink grid items in the first two rows */
+		grid-template-areas:
+							 "post-thumbnail post-title"
+							 "post-thumbnail post-meta"
+							 "post-thumbnail post-excerpt";
+		border-bottom: 1px solid #d8d8d8;
+	}
+
+	/* Display page numbers in pagination on tablet and laptop */
+	.page-numbers
+	{
+		display: inline-block;
+	}
+}
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/* Main: page, single                                                                */
+/*-----------------------------------------------------------------------------------*/
+
+/* In single post (single.php), article compotents are ordered as follow: */
+/* post-title, post-meta, post-thumbnail, post-content, post-tags         */
+
+/* mobile */
+	/* We use grid only in posts list (index.php), not in single post (single.php) and page (page.php) */
+	.single .post,
+	.page .post
+	{
+		display: block;
+	}
+
+	/* For single post or page only */
+	.single .post-thumbnail,
+	.page .post-thumbnail
+	{
+		margin: 20px;
+		text-align: center; /* To horizontaly align the image and caption of featured image */
+	}
+
+	/* center post thumbnail in article */
+	.single .post-thumbnail img,
+	.page .post-thumbnail img
+	{
+		display: block;
+		margin: auto;
+	}
+
+	/* Image caption */
+	.post-thumbnail-caption,
+	.wp-caption,
+	.wp-caption-text,
+	.gallery-caption
+	{
+		font-style: italic;
+		text-align: center;
+		color: #777;
+		padding: 5px 10px;
+	}
+
+	/* Underline link in single post content */
+	.post-content p a,
+	.post-content ul a,
+	.post-content ol a,
+	.post-content blockquote a
+	{
+		text-decoration: underline;
+	}
+
+	/* Lighter color for visited link in single post content too */
+	.post-content p a:visited,
+	.post-content ul a:visited,
+	.post-content ol a:visited,
+	.post-content blockquote a:visited
+	{
+		color: #808080;
+	}
+
+	/* Need to reset hover color otherwise it keeps visited color */
+	.post-content p a:hover,
+	.post-content ul a:hover,
+	.post-content ol a:hover,
+	.post-content blockquote a:hover
+	{
+		color: #e7503e;
+	}
+
+	/* Quote */
+	.post-content blockquote::before
+	{
+		content: "\201c";
+		position: absolute;
+		z-index: -1;
+		left: 50%;
+		top: -60px;
+		transform: translateX(-50%) translateY(3px) rotate(-2deg);
+		color: #f6f6f6;
+		font-size: 145px;
+		font-family: Georgia, serif;
+	}
+
+	.post-content blockquote
+	{
+		padding: 0.5% 6%;
+		position: relative;
+	}
+
+	.post-content cite
+	{
+		font-style: normal;
+		font-weight: bolder;
+	}
+
+	/* Fix a left-margin issue with WP gallery */
+	.wp-block-gallery
+	{
+		margin: 1em 0 0 0;
+	}
+
+	/* Fix a right-margin issue with WP image on mobile when right aligned */
+	.wp-block-image figure.alignright,
+	.wp-block-image figure.alignright img
+	{
+		width: 100%;
+	}
+
+	/* And fix a right-margin issue when left aligned, so it is not left aligned */
+	/* anymore on mobile but it is much nicer than the default behaviour...      */
+	.wp-block-gallery.alignleft
+	{
+		max-width: 100%;
+	}
+
+	/* Tags */
+	.tags
+	{
+		font-weight: bold;
+		font-size: large;
+	}
+
+	/* Comments */
+	.comments ul
+	{
+		list-style: none;
+	}
+
+	.comment-form #comment
+	{
+		width: 100%; /* Tex area full width */
+	}
+
+	.comment-form .form-submit
+	{
+		margin-bottom: 16px; /* Give the same bottom margin as the top to the form-submit button */
+	}
+
+/* tablet */
+@media only screen and (min-width: 768px)
+{
+	.single .post-thumbnail img,
+	.page .post-thumbnail img
+	{
+		width: auto;
+	}
+
+	/* Post title extra large in single post and page only */
+	.single .post-title,
+	.page .post-title
+	{
+		font-size: xx-large;
+	}
+
+	/* Reset "And fix a right-margin issue when left aligned, so it is not left aligned */
+	/* anymore on mobile but it is much nicer than the default behaviour..."            */
+	.wp-block-gallery.alignleft
+	{
+		max-width: 305px;
+	}
+
+	/* Reset the "Fix a right-margin issue with WP image on mobile when right aligned" */
+	.wp-block-image figure.alignright,
+	.wp-block-image figure.alignright img
+	{
+		width: auto;
+	}
+
+
+}
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/* Footer                                                                            */
+/*-----------------------------------------------------------------------------------*/
+
+/* Grid areas */
+.footer-left   { grid-area: footer-left; }
+.footer-middle { grid-area: footer-middle; }
+.footer-right  { grid-area: footer-right; }
+.site-info     { grid-area: site-info; }
+
+/* Mobile */
+	/* Grid layout on mobile */
+	.footer
+	{
+		display: grid;
+		grid-template-columns: 100%;
+		grid-column-gap: 10px;
+		grid-template-areas: "footer-left"
+							 "footer-middle"
+							 "footer-right"
+							 "site-info";
+		background-color: #f3f3f3;
+	}
+
+	.site-info
+	{
+		margin-top: 30px; /* Give space to make scroll to top arrow visible */
+		text-align: center;
+	}
+
+	/* Footer widgets */
+	.footer h3.widget-title
+	{
+		margin-top: 15px;
+		margin-bottom: 0;
+	}
+
+	.footer .custom-html-widget img
+	{
+		width: 100%;
+		height: 100%;
+	}
+
+	/* Search form is the WP widget in the right widget area */
+	.search-form .search-field
+	{
+		border: 1px solid #ccc;
+		width: calc(100% - 60px);
+	}
+
+	.search-form .search-submit
+	{
+		background: url(img/search-icon.png) no-repeat center #f7a500;
+		color: transparent; /* Hide the text button automatically added by WordPress */
+		width: 40px;
+		height: 28px;
+		border: medium none;
+		cursor: pointer;
+	}
+
+	.search-form .search-submit:hover
+	{
+		background-color: #cc8800;
+	}
+
+/* tablet */
+@media only screen and (min-width: 768px)
+{
+	.footer
+	{
+		grid-template-columns: 40% 30% 30%;
+		grid-template-areas: "footer-left footer-middle footer-right"
+							 "site-info site-info site-info";
+	}
+
+	.site-info
+	{
+		margin-top: 0;
+	}
+}
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/* ScrollToTop                                                                       */
+/*-----------------------------------------------------------------------------------*/
+
+.arrow-up
+{
+	width: 0;
+	height: 0;
+	border-left: 40px solid transparent;
+	border-right: 40px solid transparent;
+	border-bottom: 40px solid #f7A500;
+	color: transparent; /* Hide text link added to improve accessibility */
+}
+
+#toTop
+{
+	display: none;
+	position: fixed;
+	bottom: 18px;
+	right: 17px;
+	padding: 10px;
+	background-color: #777;
+	opacity: 0.70;
+}
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/* Responsive videos                                                                 */
+/*-----------------------------------------------------------------------------------*/
+.wp-block-embed__wrapper
+{
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+	height: 0;
+	overflow: hidden;
+}
+
+.wp-block-embed__wrapper iframe,
+.wp-block-embed__wrapper object,
+.wp-block-embed__wrapper embed
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
