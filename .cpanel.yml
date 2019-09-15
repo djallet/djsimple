@@ -2,6 +2,6 @@
 ---
 deployment:
   tasks:
-    - export GIT_WORK_TREE=/home/jallet/sites/test.jallet.org/web/app/ext/themes/simple
+    - export GIT_WORK_TREE=/home/jallet/sites/test.jallet.org/web/ext/themes/simple
     - /usr/local/cpanel/3rdparty/lib/path-bin/git checkout -f
 
