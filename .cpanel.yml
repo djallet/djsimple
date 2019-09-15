@@ -2,7 +2,8 @@
 ---
 deployment:
   tasks:
-    - export INSTALL_DIR=/home/jallet/sites/test.jallet.org/web/ext/
+    - export INSTALL_DIR=/home/jallet/sites/test.jallet.org/web/ext
+    - /bin/mkdir $INSTALL_DIR/themes
     - /bin/mkdir $INSTALL_DIR/themes/simple
     - export GIT_WORK_TREE=$INSTALL_DIR/themes/simple
     - /usr/local/cpanel/3rdparty/lib/path-bin/git checkout -f
