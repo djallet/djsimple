@@ -3,8 +3,8 @@
 deployment:
   tasks:
     - export INSTALL_DIR=/home/jallet/sites/test.jallet.org/web/ext
-    - /bin/mkdir $INSTALL_DIR/themes
-    - /bin/mkdir $INSTALL_DIR/themes/simple
+    - if [ ! -d $INSTALL_DIR/themes ]; then /bin/mkdir $INSTALL_DIR/themes; fi
+    - if [ ! -d $INSTALL_DIR/themes/simple ]; then /bin/mkdir $INSTALL_DIR/themes/simple; fi
     - export GIT_WORK_TREE=$INSTALL_DIR/themes/simple
     - /usr/local/cpanel/3rdparty/lib/path-bin/git checkout -f
 
