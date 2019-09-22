@@ -1,0 +1,27 @@
+{
+	"name": "jallet/simple",
+	"description": "My own minimalist theme. Can be used as a starter theme. It is intended for single author blog.",
+	"authors": [
+		{
+			"name": "jallet",
+			"email": "webmaster@jallet.org"
+		}
+	]
+	"keywords": [
+		"simple",
+		"theme",
+		"wordpress",
+		"wordpress-starter-theme",
+		"wordpress-theme"
+	],
+	"license": "GPL-3.0-or-later",
+	"type": "wordpress-theme",
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"require": {
+		"php": ">=5.4",
+		"composer/installers": "^1.0",
+		"components/normalize.css": "*"
+	}
+}
+
