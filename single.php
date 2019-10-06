@@ -27,7 +27,7 @@ get_header();
 				<div class="post-category">
 					<?php the_category(); // Display the categories this post belongs to, as links. ?>
 				</div><!-- .post-category -->
-				&nbsp;-&nbsp;
+				&nbsp;&nbsp;&nbsp;
 				<div class="post-date">
 					<time datetime="<?php the_time( get_option( 'date_format' ) ); ?>">
 						<?php the_time( get_option( 'date_format' ) ); // get_option uses the date format defined in Settings/General in the admin panel. ?>

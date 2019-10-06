@@ -24,7 +24,7 @@
 	</div><!-- .footer-right -->
 
 	<div class="site-info">
-		<p><a href="https://github.com/djallet/simple-wordpress" rel="theme"><?php esc_html_e( 'Simple Theme', 'simple' ); ?></a>
+		<p><a href="https://github.com/djallet/simple" rel="theme"><?php esc_html_e( 'Simple Theme', 'simple' ); ?></a>
 			<?php esc_html_e( 'was cooked for you on ', 'simple' ); ?><a href="http://wordpress.org" rel="generator">WordPress</a>
 			<?php esc_html_e( 'by ', 'simple' ); ?><a href="https://jallet.org" rel="author">Denis Jallet</a>
 		</p>

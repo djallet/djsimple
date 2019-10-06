@@ -71,14 +71,17 @@ if ( have_posts() ) :
 					the_category();
 					?>
 				</div><!-- .post-category -->
-				&nbsp;-&nbsp;
+				&nbsp;&nbsp;&nbsp;
 				<div class="post-date">
-					<time datetime="<?php the_time( 'Y-m-d' ); ?>">
-						<?php
-						// The get_option() function uses the date format defined in Settings/General in the admin panel of WordPress.
-						the_time( get_option( 'date_format' ) );
-						?>
-					</time>
+					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+						<time datetime="<?php the_time( 'Y-m-d' ); ?>">
+							<?php
+							// Permalink is added around the date in case the post has no title.
+							// The get_option() function uses the date format defined in Settings/General in the admin panel of WordPress.
+							the_time( get_option( 'date_format' ) );
+							?>
+						</time>
+					</a>
 				</div><!-- .post-date -->
 			</div> <!-- .post-meta -->
 
