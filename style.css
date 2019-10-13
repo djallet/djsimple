@@ -534,6 +534,7 @@ https://code.tutsplus.com/tutorials/code-a-burger-menu-for-mobile-users-in-wordp
 	{
 		text-align: center;
 		font-size: xx-large;
+		margin: 0;
 	}
 
 	/* Grid layout for posts list on mobile */
