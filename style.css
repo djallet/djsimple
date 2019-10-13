@@ -374,11 +374,7 @@ a:hover, a:focus, a:active
 /*-----------------------------------------------------------------------------------*/
 
 /* source:
-https://webdesign.tutsplus.com/fr/articles/a-simple-responsive-mobile-first-navigation--webdesign-6074
-
-Mobile menu without javascript:
-https://www.cssscript.com/pure-css-mobile-compatible-responsive-dropdown-menu/
-https://medium.com/@heyoka/responsive-pure-css-off-canvas-hamburger-menu-aebc8d11d793
+https://code.tutsplus.com/tutorials/code-a-burger-menu-for-mobile-users-in-wordpress--cms-33176
 */
 
 /* mobile */
@@ -413,38 +409,38 @@ https://medium.com/@heyoka/responsive-pure-css-off-canvas-hamburger-menu-aebc8d1
 		background: #ccc;
 	}
 
-	/* Hide the checkbox we are using as trick to generate a toggle event and the mobile menu items */
-	[id^=drop],
+	/* Hamburger size */
+	.mobile-menu
+	{
+        font-size: 3em;
+	}
+
+	/* Mobile menu anchor layout */
+	a.mobile-menu:link,
+	a.mobile-menu:visited,
+	a.mobile-menu:hover,
+	a.mobile-menu:active
+	{
+		text-decoration: none;
+		color: #777;
+	}
+
+	/* Hide the menu items by default on mobile */
 	.menu
 	{
 		display: none;
 	}
 
-	.mobile-menu
-	{
-		background: url(img/menu-icon.png) no-repeat center;
-		color: transparent; /* Hide the text label added to improve accessibility */
-		cursor: pointer;
-		width: 50px;
-		height: 40px;
-	}
-
-	/* Display mobile menu when Menu link is clicked which uses the checkbox trick to enable a toggle event */
-	[id^=drop]:checked + div ul
-	{
-		display: block;
-	}
-
 /* tablet */
 @media only screen and (min-width: 768px)
 {
-	/* Hide the mobile menu on other devices */
+	/* Hide the mobile menu on tablet/laptop */
 	.mobile-menu
 	{
 		display: none;
 	}
 
-	/* Display tablet / laptop menu */
+	/* Show the menu items by default on tablet/laptop */
 	.menu
 	{
 		display: block;

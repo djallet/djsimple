@@ -58,19 +58,13 @@
 			<h2 class="site-description">
 				<?php bloginfo( 'description' ); // Display the blog description, found in General Settings. ?>
 			</h2>
-			<?php // The following label displays the mobile menu. It looks like a burger (see img/menu-icon.png and style.css). ?>
-			<label for="drop" class="mobile-menu">Menu</label>
+			<?php // The following anchor displays the mobile menu. The '&#9776;' HTML character looks like a burger. ?>
+			<a class="mobile-menu" href="#" aria-label="Menu">&#9776;</a>
 
 		</div><!-- .brand -->
 
 		<?php // This is the main navigation menu. It is the same on mobile and other devices, only styling change (see style.css). ?>
-		<nav class="main-navigation">
-			<?php
-			// This checkbox is used to simulate a toggle event for the mobile menu, without any javascript.
-			// It is linked to the label upward with the for="drop" attribute of the label which is also the checkbox's id.
-			// We hide it (aria-hidden="true") from accessibility tools.
-			?>
-			<input type="checkbox" id="drop" aria-hidden="true" />
+		<nav class="main-navigation" aria-label="Main navigation">
 			<?php wp_nav_menu( array( 'theme_location' => 'main' ) ); // Display the user-defined menu in Appearance > Menus. ?>
 		</nav><!-- .main-navigation -->
 
