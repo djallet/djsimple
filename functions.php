@@ -3,7 +3,7 @@
  * This file will be referenced every time a template/page loads on your WordPress site
  * This is the place to define custom fxns and specialty code
  *
- * @package Simple Theme
+ * @package DJSimple Theme
  * @since 1.0
  */
 
@@ -31,7 +31,7 @@
  *
  * @since 1.0
  */
-define( 'SIMPLE_VERSION', '1.0' );
+define( 'DJSIMPLE_VERSION', '1.0' );
 
 
 
@@ -61,12 +61,12 @@ add_action(
 		add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 
 		// Localisation support to enable theme translations.
-		load_theme_textdomain( 'simple', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'djsimple', get_template_directory() . '/languages' );
 
 		// Register main menu for WordPress use.
 		register_nav_menus(
 			array(
-				'main' => __( 'Main Menu', 'simple' ), // Register the main menu that will appear in header.
+				'main' => __( 'Main Menu', 'djsimple' ), // Register the main menu that will appear in header.
 				// Copy and paste the line above right here if you want to make another menu,
 				// just change the 'primary' and 'secondary' to another name.
 			)
@@ -87,14 +87,14 @@ add_action(
 		// Left footer widget area.
 		register_sidebar(
 			array(
-				'id'            => 'footer-left',                             // Sidebar id.
-				'name'          => __( 'Footer Left', 'simple' ),             // Name that appears in the admin side.
-				'description'   => __( 'Left footer widget area', 'simple' ), // Dumb description for the admin side.
-				'before_widget' => '<div>',                                   // What to display before each widget.
-				'after_widget'  => '</div>',                                  // What to display following each widget.
-				'before_title'  => '<h3 class="widget-title">',               // What to display before each widget's title.
-				'after_title'   => '</h3>',                                   // What to display following each widget's title.
-				'empty_title'   => '',                                        // What to display in the case of no title defined for a widget.
+				'id'            => 'footer-left',                               // Sidebar id.
+				'name'          => __( 'Footer Left', 'djsimple' ),             // Name that appears in the admin side.
+				'description'   => __( 'Left footer widget area', 'djsimple' ), // Dumb description for the admin side.
+				'before_widget' => '<div>',                                     // What to display before each widget.
+				'after_widget'  => '</div>',                                    // What to display following each widget.
+				'before_title'  => '<h3 class="widget-title">',                 // What to display before each widget's title.
+				'after_title'   => '</h3>',                                     // What to display following each widget's title.
+				'empty_title'   => '',                                          // What to display in the case of no title defined for a widget.
 			)
 		);
 
@@ -102,8 +102,8 @@ add_action(
 		register_sidebar(
 			array(
 				'id'            => 'footer-middle',
-				'name'          => __( 'Footer Middle', 'simple' ),
-				'description'   => __( 'Middle footer widget area', 'simple' ),
+				'name'          => __( 'Footer Middle', 'djsimple' ),
+				'description'   => __( 'Middle footer widget area', 'djsimple' ),
 				'before_widget' => '<div>',
 				'after_widget'  => '</div>',
 				'before_title'  => '<h3 class="widget-title">',
@@ -116,8 +116,8 @@ add_action(
 		register_sidebar(
 			array(
 				'id'            => 'footer-right',
-				'name'          => __( 'Footer Right', 'simple' ),
-				'description'   => __( 'Right footer widget area', 'simple' ),
+				'name'          => __( 'Footer Right', 'djsimple' ),
+				'description'   => __( 'Right footer widget area', 'djsimple' ),
 				'before_widget' => '<div>',
 				'after_widget'  => '</div>',
 				'before_title'  => '<h3 class="widget-title">',
@@ -144,10 +144,10 @@ add_action(
 		wp_register_style( 'normalize', get_template_directory_uri() . '/css/normalize.css', array(), '8.0.1', 'all' );
 
 		// Theme stylesheet.
-		wp_register_style( 'simple', get_template_directory_uri() . '/style.css', array( 'normalize' ), SIMPLE_VERSION, 'all' );
+		wp_register_style( 'djsimple', get_template_directory_uri() . '/style.css', array( 'normalize' ), DJSIMPLE_VERSION, 'all' );
 
-		// Enqueue styles - It will also enqueue normalize as simple depends on it.
-		wp_enqueue_style( 'simple' );
+		// Enqueue styles - It will also enqueue normalize as djsimple depends on it.
+		wp_enqueue_style( 'djsimple' );
 	}
 );
 
@@ -170,10 +170,10 @@ add_action(
 		wp_register_script( 'scrolltotop', get_template_directory_uri() . '/js/scrolltotop.js', array( 'jquery' ), '1.0', true );
 
 		// Add theme script.
-		wp_register_script( 'simple', get_template_directory_uri() . '/js/simple.js', array( 'scrolltotop' ), SIMPLE_VERSION, true );
+		wp_register_script( 'djsimple', get_template_directory_uri() . '/js/djsimple.js', array( 'scrolltotop' ), DJSIMPLE_VERSION, true );
 
 		// Enqueue scripts - It will also enqueue scrolltotop as djth depends on it.
-		wp_enqueue_script( 'simple' );
+		wp_enqueue_script( 'djsimple' );
 	}
 );
 
@@ -262,7 +262,7 @@ add_filter(
 			$more = sprintf(
 				'...&nbsp;<a class="read-more" href="%1$s">%2$s</a>',
 				get_permalink( get_the_ID() ),
-				__( 'Read More', 'simple' )
+				__( 'Read More', 'djsimple' )
 			);
 		}
 		return $more;
@@ -276,7 +276,7 @@ add_filter(
  *
  * @since 1.0
  */
-function simple_pagination() {
+function djsimple_pagination() {
 	global $wp_query;
 	$big = 999999999;
 
@@ -315,7 +315,7 @@ function simple_pagination() {
  *
  * @since 1.0
  */
-function simple_post_thumbnail_caption() {
+function djsimple_post_thumbnail_caption() {
 	// Escaping output to securize it with wp_kses.
 	$allowed_html =
 	[

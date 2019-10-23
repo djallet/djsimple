@@ -7,7 +7,7 @@
 /* - search result page
 /* This template will also be called in any case where the WordPress engine doesn't know which template to use (e.g. 404 error)
  *
- * @package Simple Theme
+ * @package DJSimple Theme
  * @since 1.0
  */
 
@@ -23,10 +23,10 @@ if ( is_category() ) :
 	single_cat_title();
 elseif ( is_search() ) :
 	// If we are displaying a search result, show the search string.
-	echo esc_html__( 'Search result for: ', 'simple' ) . esc_html( get_search_query( false ) );
+	echo esc_html__( 'Search result for: ', 'djsimple' ) . esc_html( get_search_query( false ) );
 elseif ( is_tag() ) :
 	// If we are displaying a tag, show its name.
-	esc_html_e( 'Tag: ', 'simple' ) . single_tag_title();
+	esc_html_e( 'Tag: ', 'djsimple' ) . single_tag_title();
 endif;
 ?>
 </h2>
@@ -99,9 +99,9 @@ if ( have_posts() ) :
 
 	<div class="pagination">
 		<?php
-		// The simple_pagination() function is defined in functions.php.
+		// The djsimple_pagination() function is defined in functions.php.
 		// It generates the pagination to navigate between posts lists.
-		simple_pagination();
+		djsimple_pagination();
 		?>
 	</div><!-- .pagination -->
 
@@ -109,7 +109,7 @@ if ( have_posts() ) :
 <?php else : // If there is no post to display and loop through, let's apologize to the reader (also your 404 error). ?>
 
 	<article class="post error">
-		<h2 class="error-title"><?php esc_html_e( 'Nothing has been posted like that yet.', 'simple' ); ?></h2>
+		<h2 class="error-title"><?php esc_html_e( 'Nothing has been posted like that yet.', 'djsimple' ); ?></h2>
 	</article>
 
 <?php endif; ?>

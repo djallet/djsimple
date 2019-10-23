@@ -3,7 +3,7 @@
  * This template will be called within single.php
  * for displaying and writing comments
  *
- * @package Simple Theme
+ * @package DJSimple Theme
  * @since 1.0
  */
 
@@ -12,7 +12,7 @@
 <div class="comments">
 <?php if ( post_password_required() ) : // In case the post is password protected, ask the password before displaying comments. ?>
 
-	<p><?php esc_html_e( 'Post is password protected. Enter the password to view any comments.', 'simple' ); ?></p>
+	<p><?php esc_html_e( 'Post is password protected. Enter the password to view any comments.', 'djsimple' ); ?></p>
 
 <?php else : ?>
 

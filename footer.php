@@ -3,7 +3,7 @@
  * This template will be called by all other template files to finish
  * rendering the page and display the footer area/content
  *
- * @package Simple Theme
+ * @package DJSimple Theme
  * @since 1.0
  */
 
@@ -24,9 +24,9 @@
 	</div><!-- .footer-right -->
 
 	<div class="site-info">
-		<p><a href="https://github.com/djallet/simple" rel="theme"><?php esc_html_e( 'Simple Theme', 'simple' ); ?></a>
-			<?php esc_html_e( 'was cooked for you on ', 'simple' ); ?><a href="http://wordpress.org" rel="generator">WordPress</a>
-			<?php esc_html_e( 'by ', 'simple' ); ?><a href="https://jallet.org" rel="author">Denis Jallet</a>
+		<p><a href="https://github.com/djallet/djsimple" rel="theme"><?php esc_html_e( 'DJ Simple Theme', 'djsimple' ); ?></a>
+			<?php esc_html_e( 'was cooked for you on ', 'djsimple' ); ?><a href="http://wordpress.org" rel="generator">WordPress</a>
+			<?php esc_html_e( 'by ', 'djsimple' ); ?><a href="https://jallet.org" rel="author">Denis Jallet</a>
 		</p>
 	</div><!-- .site-info -->
 

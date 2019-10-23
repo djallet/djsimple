@@ -3,7 +3,7 @@
  * This template will be called by all other template files to begin
  * rendering the page and display the header/nav
  *
- * @package Simple Theme
+ * @package DJSimple Theme
  * @since 1.0
  */
 

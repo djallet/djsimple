@@ -1,5 +1,5 @@
 {
-	"name": "djallet/simple",
+	"name": "djallet/djsimple",
 	"description": "My own minimalist theme. Can be used as a starter theme. It is intended for single author blog.",
 	"authors": [
 		{
@@ -9,6 +9,7 @@
 		}
 	],
 	"keywords": [
+		"djsimple",
 		"simple",
 		"theme",
 		"wordpress",

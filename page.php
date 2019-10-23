@@ -2,7 +2,7 @@
 /**
 /* The template for displaying any single page
  *
- * @package Simple Theme
+ * @package DJSimple Theme
  * @since 1.0
  */
 
@@ -42,7 +42,7 @@ get_header();
 <?php else : // If there are no posts to display and loop through, let's apologize to the reader (also your 404 error). ?>
 
 	<article class="post error">
-		<h2 class="error-title"><?php esc_html_e( 'Nothing has been posted like that yet.', 'simple' ); ?></h2>
+		<h2 class="error-title"><?php esc_html_e( 'Nothing has been posted like that yet.', 'djsimple' ); ?></h2>
 	</article>
 
 <?php endif; ?>

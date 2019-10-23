@@ -1,9 +1,9 @@
-=== Simple ===
+=== DJ Simple ===
 Contributors: djallet
 Tags: blog, one-column, custom-menu, featured-images, footer-widgets, translation-ready
 Requires at least: 5.0
 Tested up to: WordPress 5.2
-Requires PHP: 5.4
+Requires PHP: 5.6
 Stable tag: 1.0
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0-standalone.html
@@ -14,8 +14,7 @@ My own minimalist theme. Can be used as a starter theme. It is intended for sing
 == Changelog ==
 
 = 1.0 =
-* Released: Month D, YYYY
-
+* Released: October 23, 2019
 Initial release
 
 == Resources ==
@@ -23,6 +22,6 @@ Initial release
 * scrolltotop.js © 2013 Yang Zha
 
 == Credits ==
-Simple is based on Naked http://naked-wordpress.bckmn.com/.
+DJ Simple is based on Naked http://naked-wordpress.bckmn.com/.
 (C) 2013-2017 Joshua Beckman
 License: GNU General Public License

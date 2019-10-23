@@ -2,7 +2,7 @@
 /**
  * The template for displaying any single post
  *
- * @package Simple Theme
+ * @package DJSimple Theme
  * @since 1.0
  */
 
@@ -40,7 +40,7 @@ get_header();
 				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 					<?php the_post_thumbnail( 'large' ); // Get the thumbnail of this post. ?>
 				</a>
-				<?php simple_post_thumbnail_caption(); ?>
+				<?php djsimple_post_thumbnail_caption(); ?>
 			</figure> <!-- .post-thumbnail -->
 			<?php endif; ?>
 
@@ -54,7 +54,7 @@ get_header();
 			</div><!-- .post-content -->
 
 			<div class="tags">
-				<?php the_tags( __( 'Tags: ', 'simple' ), ', ', '' ); // Display the tags this post has, as links separated by comma. ?>
+				<?php the_tags( __( 'Tags: ', 'djsimple' ), ', ', '' ); // Display the tags this post has, as links separated by comma. ?>
 			</div>
 
 		</article>
@@ -69,14 +69,14 @@ get_header();
 	if ( comments_open() || '0' !== get_comments_number() ) {
 		comments_template( '', true );
 	} elseif ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) {
-		esc_html_e( 'Comments are closed here.', 'simple' );
+		esc_html_e( 'Comments are closed here.', 'djsimple' );
 	}
 	?>
 
 <?php else : // If there are no posts to display and loop through, let's apologize to the reader (also your 404 error). ?>
 
 	<article class="post error">
-		<h2 class="error-title"><?php esc_html_e( 'Nothing has been posted like that yet.', 'simple' ); ?></h2>
+		<h2 class="error-title"><?php esc_html_e( 'Nothing has been posted like that yet.', 'djsimple' ); ?></h2>
 	</article>
 
 <?php endif; ?>
