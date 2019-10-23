@@ -1,4 +1,4 @@
-# Simple 
+# DJSimple 
 * Contributors: djallet
 * Tags: blog, one-column, custom-menu, featured-images, footer-widgets, translation-ready
 * Requires at least: 5.0
@@ -14,7 +14,7 @@ My own minimalist theme. Can be used as a starter theme. It is intended for sing
 ## Changelog
 
 ### 1.0
-* Released: September 29, 2019
+* Released: October 23, 2019
 Initial release
 
 ## Resources
