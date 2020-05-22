@@ -45,7 +45,7 @@
 	?>
 >
 
-<header id="top" class="header" <?php // Add id="top" to improve accessibility. ?>>
+<header id="top" class="header" <?php // Add id="top" to set 'Scroll To Top' target. ?>>
 
 		<div class="brand">
 
