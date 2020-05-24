@@ -33,6 +33,8 @@
 			// .menu li:hover > ul { display: block !important; }
 			// Otherwise, dropdown menus are not displayed.
 			$( '.menu' ).show();
+			
+			// Hide sub menu in case it was previously open such as in mobile device mode
 			$( '.sub-menu' ).hide();
 		}
 	}
