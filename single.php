@@ -63,7 +63,7 @@ get_header();
 
 	<?php
 	// If comments are open or we have at least one comment, load up comments.php template.
-	// comments?php is the default name, so '' as first parameter of comments_template() is ok.
+	// comments.php is the default name, so '' as first parameter of comments_template() is ok.
 	// We could have use the WordPress default template, but it is now mandatory to have one in a theme.
 	// If we don't put one, Theme Check raises an error.
 	if ( comments_open() || '0' !== get_comments_number() ) {
