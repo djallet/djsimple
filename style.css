@@ -695,14 +695,16 @@ https://www.cssscript.com/create-a-multi-level-drop-down-menu-with-pure-css/
 
 	/* Image caption */
 	.post-thumbnail-caption,
-	.wp-caption,
-	.wp-caption-text,
-	.gallery-caption
-	{
+	figcaption {
 		font-style: italic;
 		text-align: center;
 		color: #777;
-		padding: 5px 10px;
+	}
+
+	/* Featured image caption */
+	.post-thumbnail-caption	{
+		margin-top: 0.5em;
+		margin-bottom: 1em;
 	}
 
 	/* Underline link in single post content */
